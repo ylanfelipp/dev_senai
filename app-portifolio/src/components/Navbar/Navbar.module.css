@@ -1,0 +1,17 @@
+.navbar {
+    background: #FFFFFF;
+    height: 1.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.listaDeLinks {
+    display: flex;
+    list-style: none;
+}
+
+.listaDeLinks li {
+    margin: 0.25rem;
+}
