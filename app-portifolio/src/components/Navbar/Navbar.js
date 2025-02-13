@@ -8,6 +8,7 @@ export default function Navbar() {
             <section>
                 <Image 
                     src={iconSVG}
+                    alt="logo.svg"
                 />
             </section>
             <section>

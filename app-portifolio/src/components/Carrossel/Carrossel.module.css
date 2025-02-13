@@ -1,0 +1,31 @@
+.sec1 {
+    background: linear-gradient(270deg, var(--dark-blue), var(--dark-gray));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardCarrossel {
+    background-color: white;
+    height: 20rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cardCarrossel img {
+    width: 150px;
+    height: 150px;
+}
+
+.cardCarrossel h2 {
+    margin-bottom: 0.1rem;
+}
+
+.cardCarrossel p {
+    margin: 0.2rem;
+}
