@@ -1,6 +1,7 @@
 import Carrossel from "@/components/Carrossel/Carrossel";
 import styles from "./page.module.css";
 import Navbar from "@/components/Navbar/Navbar";
+import SectionProjetos from "@/components/SectionProjetos/SectionProjetos";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       </header>
       <main>
         <Carrossel />
+        <SectionProjetos />
       </main>
     </div>
   );
