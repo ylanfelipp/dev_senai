@@ -1,25 +1,41 @@
-const carro = {
-    marca: "Chevrolet",
-    modelo: "Camaro", 
-    vel: 0,
-    acelerar: function() {
-        this.vel += 10
-    },
-    frear: function() {
-        this.vel -= 5
-    },
-    apresentacao: function() {
-        console.log(`Marca: ${this.marca}\nModelo: ${this.modelo}\nVelocidade: ${this.vel}km/h`)
-    }
-}
+import { Veiculo } from './Veiculo.js'
+import { Pessoa } from './Pessoa.js'
+import { Carro } from './Carro.js'
+import { Aviao } from './Aviao.js'
 
 
+const carro = new Veiculo("SUV", 2025, "Reanult", "prata", 220)
+const Motorista = new Pessoa("Ylan", 21, "Motorista")
+const Passageiro = new Pessoa("Sarah", 20, "Passageiro")
+carro.adicionarPessoa(Motorista)
+carro.adicionarPessoa(Passageiro)
 carro.acelerar()
 carro.acelerar()
 carro.acelerar()
-carro.apresentacao()
+carro.acelerar()
+carro.acelerar()
 carro.frear()
 carro.frear()
 carro.frear()
-carro.frear()
-carro.apresentacao()
+console.log(carro.getVelocidade())
+
+const ferrari = new Carro("F40", 2024, "Ferrari", "Vermelha", 450)
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.frear()
+ferrari.frear()
+ferrari.frear()
+ferrari.frear()
+const novoPassageiro = new Pessoa("Alan", 45, "Passageiro")
+ferrari.adicionarPessoa(novoPassageiro)
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
+console.log(ferrari.getVelocidade())
+
+const aviao = new Aviao()
+aviao.acelerar()
