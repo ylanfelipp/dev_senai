@@ -1,17 +1,16 @@
 import { Personagem } from "./Personagem.js"
 import { Obstaculo } from "./Obstaculo.js"
 
-let gameOver = false
 
 const canvas = document.getElementById("jogoCanvas")
 const ctx = canvas.getContext('2d')
 
 document.addEventListener('click', e => {
-    if(gameOver) location.reload()
+    if(personagem.getGameOver()) location.reload()
 })
 
 document.addEventListener('keypress', e => {
-    if (e.code == "Space") {
+    if (e.code == "Space" && personagem.pulando == false) {
         personagem.saltar()
     }
 })
@@ -24,7 +23,7 @@ function verificaColisao() {
     if (
         personagem.posicaoX < obstaculo.posicaoX + obstaculo.largura &&
         personagem.posicaoX + personagem.largura > obstaculo.posicaoX &&
-        personagem.posicaoY > obstaculo.posicaoY + obstaculo.altura &&
+        personagem.posicaoY < obstaculo.posicaoY + obstaculo.altura &&
         personagem.posicaoY + personagem.altura > obstaculo.posicaoY
     ) {
         houveColisao()
@@ -39,7 +38,7 @@ function houveColisao() {
     ctx.fillStyle = "black"
     ctx.font = "50px Arial"
     ctx.fillText("GAME OVER", (canvas.width / 2) - 150, (canvas.height / 2) - 5)
-    gameOver = true
+    personagem.setGameOver(true)
 }
 
 function loop() {
@@ -47,6 +46,7 @@ function loop() {
     verificaColisao()
     obstaculo.desenhar(ctx)
     personagem.desenhar(ctx)
+    if(personagem.getGameOver()) return
     personagem.atualizaPosicao()
     obstaculo.atualizaPosicao()
     requestAnimationFrame(loop)

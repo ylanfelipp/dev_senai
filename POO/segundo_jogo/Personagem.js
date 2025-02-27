@@ -39,10 +39,10 @@ class Personagem extends PersonCanvas {
             }
         }
     
-        // if (gameOver) {
-        //     this.velocidadeX = 0
-        //     return
-        // }
+        if (this.getGameOver()) {
+            this.velocidadeX = 0
+            return
+        }
         this.velocidadeX = 0.2
         this.posicaoX += this.velocidadeX
     }
