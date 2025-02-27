@@ -21,13 +21,6 @@ class Obstaculo extends PersonCanvas {
             this.posicaoY = 400 - alturaObstaculo
             this.velocidade += 0.4
         }
-
-        if (this.getGameOver()) {
-            this.velocidadeX = 0
-            return
-        }
-        this.velocidadeX = 0.2
-        this.posicaoX += this.velocidadeX
     }
 
 }

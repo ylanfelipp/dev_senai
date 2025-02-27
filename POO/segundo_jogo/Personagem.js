@@ -3,11 +3,13 @@ import { PersonCanvas } from "./PersonCanvas.js"
 class Personagem extends PersonCanvas {
     #gravidade
     #velocidadeY
+    #pontos
     constructor(posicaoX, posicaoY, largura, altura, cor) {
         super(posicaoX, posicaoY, largura, altura, cor)
         this.pulando = false
         this.#velocidadeY = 0
         this.#gravidade = 0.4
+        this.#pontos = 0
     }
 
     getGravidade = function() {
@@ -26,6 +28,14 @@ class Personagem extends PersonCanvas {
         }
     }
 
+    setPontos = function(pontos) {
+        this.#pontos += pontos
+    }
+
+    getPontos = function() {
+        return this.#pontos
+    }
+
     saltar = function() {
         this.pulando = true
         this.setVelocidadeY(-15)
@@ -41,15 +51,10 @@ class Personagem extends PersonCanvas {
                 this.setVelocidadeY(0)
                 this.posicaoY = 350
                 this.pulando = false
+                this.setPontos(5)
+                localStorage.setItem('pontos', this.getPontos())
             }
         }
-    
-        if (this.getGameOver()) {
-            this.velocidadeX = 0
-            return
-        }
-        this.velocidadeX = 1
-        // this.posicaoX += this.velocidadeX
     }
 }
 

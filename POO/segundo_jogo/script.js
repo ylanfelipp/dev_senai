@@ -5,12 +5,22 @@ import { Obstaculo } from "./Obstaculo.js"
 const canvas = document.getElementById("jogoCanvas")
 const ctx = canvas.getContext('2d')
 
-document.addEventListener('click', e => {
+let pontos = localStorage.getItem('pontos') == null ? 0 : parseInt(localStorage.getItem('pontos'))
+let maxPontos = parseInt(localStorage.getItem('maxPontos'))
+
+function pontuacao() {
+    ctx.fillStyle = "white"
+    ctx.font = "25px Arial"
+    pontos = localStorage.getItem('pontos')
+    ctx.fillText(`Pontos: ${pontos}`, 50, 40)
+}
+
+document.addEventListener('click', () => {
     if(personagem.getGameOver()) location.reload()
 })
 
 document.addEventListener('keypress', e => {
-    if (e.code == "Space") {
+    if (e.code == "Space" && personagem.pulando == false) {
         personagem.saltar()
     }
 })
@@ -30,6 +40,13 @@ function verificaColisao() {
     }
 }
 
+
+function mensagemPontos() {
+        ctx.fillStyle = "black"
+    ctx.font = "14px Arial"
+    ctx.fillText(`Pontos: ${pontos}, Record: ${maxPontos}`, (canvas.width / 2) - 60, (canvas.height / 2) - (-25))
+}
+
 function houveColisao() {
     obstaculo.velocidade = 0
     obstaculo.atualizaPosicao()
@@ -38,7 +55,9 @@ function houveColisao() {
     ctx.fillStyle = "black"
     ctx.font = "50px Arial"
     ctx.fillText("GAME OVER", (canvas.width / 2) - 150, (canvas.height / 2) - 5)
+    mensagemPontos()
     personagem.setGameOver(true)
+    localStorage.setItem('pontos', 0)
 }
 
 function loop() {
@@ -46,9 +65,15 @@ function loop() {
     verificaColisao()
     obstaculo.desenhar(ctx)
     personagem.desenhar(ctx)
-    if(personagem.getGameOver()) return
+    if(personagem.getGameOver()) {
+        if (maxPontos < pontos) {
+            localStorage.setItem('maxPontos', pontos)
+        }
+        return
+    }
     personagem.atualizaPosicao()
     obstaculo.atualizaPosicao()
+    pontuacao()
     requestAnimationFrame(loop)
 }
 
