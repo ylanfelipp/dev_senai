@@ -11,7 +11,7 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('keypress', e => {
-    if (e.code == "Space" && personagem.pulando == false) {
+    if (e.code == "Space") {
         personagem.saltar()
     }
 })
@@ -23,7 +23,9 @@ const obstaculo = new Obstaculo(canvas.width - 100, canvas.height - 100, 50, 100
 function verificaColisao() {
     if (
         personagem.posicaoX < obstaculo.posicaoX + obstaculo.largura &&
-        personagem.posicaoX + personagem.largura > obstaculo.posicaoX
+        personagem.posicaoX + personagem.largura > obstaculo.posicaoX &&
+        personagem.posicaoY > obstaculo.posicaoY + obstaculo.altura &&
+        personagem.posicaoY + personagem.altura > obstaculo.posicaoY
     ) {
         houveColisao()
     }

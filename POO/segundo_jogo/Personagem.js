@@ -7,7 +7,7 @@ class Personagem extends PersonCanvas {
         super(posicaoX, posicaoY, largura, altura, cor)
         this.pulando = false
         this.#velocidadeY = 0
-        this.#gravidade = 0.6
+        this.#gravidade = 0.4
     }
 
     getGravidade = function() {
@@ -18,22 +18,22 @@ class Personagem extends PersonCanvas {
         return this.#velocidadeY
     }
 
-    setVelcoidadeY = function(velocidade) {
+    setVelocidadeY = function(velocidade) {
         this.#velocidadeY += velocidade
     }
 
     saltar = function() {
         this.pulando = true
-        setVelcoidadeY(-15)
-        this.posicaoY += getVelocidadeY()
+        this.setVelocidadeY(-15)
+        this.posicaoY += this.getVelocidadeY()
     }
 
     atualizaPosicao = function () {
         if (this.pulando) {
-            this.velocidadeY += getGravidade()
-            this.posicaoY += this.velocidadeY
+            this.setVelocidadeY(this.getGravidade())
+            this.posicaoY += this.getVelocidadeY()
     
-            if (this.posicaoY - getVelocidadeY() > 350) {
+            if (this.posicaoY - this.getVelocidadeY() >= 350) {
                 this.posicaoY = 350
                 this.pulando = false
             }
