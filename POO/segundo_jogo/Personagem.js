@@ -19,7 +19,11 @@ class Personagem extends PersonCanvas {
     }
 
     setVelocidadeY = function(velocidade) {
-        this.#velocidadeY += velocidade
+        if (velocidade === 0) {
+            this.#velocidadeY = 0
+        } else {
+            this.#velocidadeY += velocidade
+        }
     }
 
     saltar = function() {
@@ -34,6 +38,7 @@ class Personagem extends PersonCanvas {
             this.posicaoY += this.getVelocidadeY()
     
             if (this.posicaoY - this.getVelocidadeY() >= 350) {
+                this.setVelocidadeY(0)
                 this.posicaoY = 350
                 this.pulando = false
             }
@@ -43,8 +48,8 @@ class Personagem extends PersonCanvas {
             this.velocidadeX = 0
             return
         }
-        this.velocidadeX = 0.2
-        this.posicaoX += this.velocidadeX
+        this.velocidadeX = 1
+        // this.posicaoX += this.velocidadeX
     }
 }
 

@@ -10,7 +10,7 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('keypress', e => {
-    if (e.code == "Space" && personagem.pulando == false) {
+    if (e.code == "Space") {
         personagem.saltar()
     }
 })

@@ -4,7 +4,7 @@ class Obstaculo extends PersonCanvas {
     #velocidadeX
     constructor(posicaoX, posicaoY, largura, altura, cor) {
         super(posicaoX, posicaoY, largura, altura, cor)
-        this.#velocidadeX = 2
+        this.#velocidadeX = 3.5
     }
 
     getVelocidadeX = function () {
@@ -16,9 +16,9 @@ class Obstaculo extends PersonCanvas {
 
         if (this.posicaoX <= 0 - this.largura) {
             let alturaObstaculo = Math.floor(Math.random() * 90) + 70
-            this.posicaoX = canvas.width - 100
+            this.posicaoX = 800 - 100
             this.altura = alturaObstaculo
-            this.posicaoY = canvas.height - alturaObstaculo
+            this.posicaoY = 400 - alturaObstaculo
             this.velocidade += 0.4
         }
 
