@@ -1,22 +1,23 @@
 function verificadorCodigoEAN13(codigo, numeroVerficador) {
-    if (codigo < 13) {
-        return "Código Inválido"
+    if (codigo.length !== 13) {
+        return "Código Inválido";
     }
 
+    const listaNumerosCodigo = codigo.split("").map(Number);
     let soma = 0;
-    const listaNumerosCodigo = codigo.split("")
-    console.log(listaNumerosCodigo)
-    for (let i = 0; i <= codigo.length - 1; i++) {
-        if (i % 2 == 0) {
-            soma += (listaNumerosCodigo[i] * 3)
+
+    for (let i = 0; i < 12; i++) {
+        if (i % 2 === 0) {
+            soma += listaNumerosCodigo[i] * 1;
         } else {
-            soma += listaNumerosCodigo[i]
+            soma += listaNumerosCodigo[i] * 3;
         }
     }
 
-    console.log(soma)
+    const restoDivisao = soma % 10;
+    const digitoVerificador = restoDivisao === 0 ? 0 : 10 - restoDivisao;
 
-    // return verificador % 10 == 0 ? "Código válido" : "Código inválido"
+    return digitoVerificador === parseInt(numeroVerficador) ? "Código válido" : "Código inválido";
 }
 
-console.log(verificadorCodigoEAN13("9782940199617", "7"))
+console.log(verificadorCodigoEAN13("9782940199617", "7"));
