@@ -13,8 +13,11 @@
 }
 
 .sec1 .projetos {
+    max-width: 70%;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
 }
 
@@ -28,6 +31,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+}
+
+.projetos .card:hover {
+    cursor: pointer;
 }
 
 .sec1 div.card img {

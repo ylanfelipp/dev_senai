@@ -13,8 +13,8 @@ export default function Navbar() {
             </section>
             <section>
                 <ul className={style.listaDeLinks}>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Projeto</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#projetos">Projeto</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
