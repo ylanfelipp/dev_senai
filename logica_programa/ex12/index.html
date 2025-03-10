@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de Números Romanos</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Conversor de Número Romano em Decimal</h1>
+        <hr>
+        <br>
+        <br>
+        <label for="romano">Digite um algarismo romano</label>
+        <input type="text" id="romano" name="romano" onkeyup="javascript:this.value=this.value.toUpperCase()" />
+        <br>
+        <br>
+        <button onclick="converteRomanosEmDecimal()">Converter</button>
+        <br>
+        <br>
+        <strong id="decimal">Resultado: --</strong>
+    </body>
+</html>
