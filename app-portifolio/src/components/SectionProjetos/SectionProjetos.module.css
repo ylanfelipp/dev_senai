@@ -1,5 +1,6 @@
 .sec1 {
     background: linear-gradient(270deg, var(--dark-blue), var(--dark-gray));
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
