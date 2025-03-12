@@ -1,5 +1,6 @@
 .sec1 {
     background: linear-gradient(270deg, var(--dark-blue), var(--dark-gray));
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -13,8 +14,11 @@
 }
 
 .sec1 .projetos {
+    max-width: 70%;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
 }
 
@@ -28,6 +32,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+}
+
+.projetos .card:hover {
+    cursor: pointer;
 }
 
 .sec1 div.card img {

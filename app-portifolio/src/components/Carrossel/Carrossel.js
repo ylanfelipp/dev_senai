@@ -5,7 +5,7 @@ import Projetos from "@/data/dataPorfolio"
 
 function Carrossel() {
     return (
-        <section className={styles.sec1}>
+        <section id="inicio" className={styles.sec1}>
             <Carousel controls={false} play={3000}>
                 {Projetos.map((projeto, index) => (
                     <Box>
