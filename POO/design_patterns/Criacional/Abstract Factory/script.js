@@ -1,5 +1,5 @@
-import AndroidFactory from "./Components/AndroidFactory.js";
-import IOSFactory from "./Components/IOSFactory.js";
+import AndroidFactory from "./Classes/AndroidFactory.js";
+import IOSFactory from "./Classes/IOSFactory.js";
 
 const android_factory = new AndroidFactory()
 const ios_factory = new IOSFactory()
