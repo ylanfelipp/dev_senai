@@ -1,0 +1,22 @@
+div {
+    margin: 1rem 0;
+}
+
+div button {
+    background-color: blue;
+    color: white;
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: ease-out 300ms all;
+}
+
+div button:hover {
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+    border-color: blue;
+}
