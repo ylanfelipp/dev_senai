@@ -1,0 +1,48 @@
+.input-task {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-task label {
+    color: var(--soft-white);
+    margin: 0.5rem 0;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input-task .input-button input[type="text"] {
+    background-color: var(--light-black);
+    color: var(--soft-white);
+    font-size: 1rem;
+    font-weight: bold;
+    width: 350px;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    outline: none;
+    letter-spacing: 1px;
+    border: 1px solid var(--light-gray);
+}
+
+.input-button button {
+    background-color: var(--yellow);
+    width: 100px;
+    height: 2.5rem;
+    color: var(--soft-white);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--soft-white);
+    transition: all ease 0.3s;
+}
+
+.input-button button:hover {
+    background-color: var(--soft-white);
+    color: var(--light-black);
+    cursor: pointer;
+}

@@ -4,7 +4,7 @@ import "./Button.css"
 const Button = () => {
     return (
         <div>
-            <button type="button">Criar Card</button>
+            <button type="submit">Criar Card</button>
         </div>
     )
 }

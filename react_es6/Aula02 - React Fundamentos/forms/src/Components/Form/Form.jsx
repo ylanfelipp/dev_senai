@@ -4,16 +4,20 @@ import Button from '../Button/Button'
 import Dropdown from '../Dropdown/Dropdown'
 import "./Form.css"
 
-const Form = () => {
+const Form = ({ setColaboradores }) => {
     const [nome, setNome] = useState("")
+    const [time, setTime] = useState("")
     const [cargo, setCargo] = useState("")
     const [imagem, setImagem] = useState("")
 
     const onEnviar = e => {
         e.preventDefault()
-        console.log({ nome, cargo, imagem })
+        setColaboradores(colaboradores => [...colaboradores, { nome, cargo, imagem, time }])
+        setNome("")
+        setTime("")
+        setCargo("")
+        setImagem("")
     }
-
     return (
         <form onSubmit={onEnviar}>
             <p>Preencha os dados para criar o card colaborador</p>
@@ -35,7 +39,7 @@ const Form = () => {
                 inputValue={imagem}
                 setInputValue={setImagem}
             />
-            <Dropdown />
+            <Dropdown selectValue={time} setSelectValue={setTime} />
             <Button />
         </form>
     )

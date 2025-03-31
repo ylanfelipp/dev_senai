@@ -1,11 +1,11 @@
 import React from 'react'
 import "./Dropdown.css"
 
-const Dropdown = () => {
+const Dropdown = ({ selectValue, setSelectValue }) => {
     return (
         <div>
-            <label htmlFor="">Time</label>
-            <select required name="time">
+            <label htmlFor="time">Time</label>
+            <select required name="time" id="time" value={selectValue} onChange={e => setSelectValue(e.target.value)}>
                 <option value=""></option>
                 <option value="Aluno">Aluno</option>
                 <option value="Professor">Professor</option>
