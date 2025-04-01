@@ -1,0 +1,11 @@
+{
+  "name": "con-uni",
+  "version": "1.0.0",
+  "description": "Uma biblioteca que contém funções para converter unidades de medida",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ylan Felipp",
+  "license": "MIT"
+}
