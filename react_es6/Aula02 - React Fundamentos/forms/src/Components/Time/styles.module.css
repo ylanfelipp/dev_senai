@@ -1,0 +1,21 @@
+.timeContainer {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.timeContainer strong {
+    width: 100px;
+    margin-right: 1rem;
+    font-weight: 300;
+}
+
+.timeContainer:nth-child(odd) {
+    background-color: skyblue;
+    width: 100%;
+}
+
+.timeContainer:nth-child(even) {
+    background-color: wheat;
+    width: 100%;
+}

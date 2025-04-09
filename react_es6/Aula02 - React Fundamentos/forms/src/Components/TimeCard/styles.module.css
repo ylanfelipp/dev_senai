@@ -1,0 +1,44 @@
+.timeCard {
+    background-color: white;
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 1rem;
+    display: flex;
+    text-align: center;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.avatar {
+    background-color: #004AAD;
+    width: 100%;
+    height: 40%;
+    margin: 0;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeCard img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 60px;
+}
+
+.nomeCargo {
+    margin: 1rem;
+}
+
+.nomeCargo p {
+    font-size: 0.95rem;
+}
+.nomeCargo p:nth-child(1) {
+    color: #004AAD;
+    font-weight: 700;
+}
