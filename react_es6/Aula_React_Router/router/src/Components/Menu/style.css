@@ -1,0 +1,18 @@
+nav {
+    background-color: skyblue;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    height: 100%;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all ease 300ms;
+}
+
+nav a:hover {
+    background-color: cadetblue;
+}

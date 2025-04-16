@@ -10,6 +10,7 @@ const numerosRomanos = {
     M: 1000
 }
 
+
 function converteRomanosEmDecimal() {
     let num, result = 0, anterior = 0, atual = 0
     romano = document.getElementById("romano").value.toUpperCase()
@@ -23,7 +24,7 @@ function converteRomanosEmDecimal() {
             }
             num = numerosRomanos[atual]
             if (i > 0) {
-                if (romano[i - 2] === romano[i - 1] && num > anterior) {
+                if (romano[i - 2] == romano[i - 1] && num > anterior) {
                     anula = 1
                 }
             }
