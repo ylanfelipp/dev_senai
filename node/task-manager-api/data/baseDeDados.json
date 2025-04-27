@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1745790297880",
+        "titulo": "Enviar relatório ao cliente",
+        "descricao": "Relatório semanal de progresso do projeto X",
+        "concluida": false,
+        "responsavel": "Ana",
+        "prazo": "2025-04-20",
+        "sprint": 3,
+        "prioridade": "baixa"
+    }
+]
