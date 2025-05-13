@@ -1,14 +1,13 @@
+
 class Tarefa {
-    constructor(id, titulo, descricao, responsavel, prazo, sprint, prioridade) {
+    constructor(id, titulo, responsavel, dataTermino) {
         this.id = id
         this.titulo = titulo
-        this.descricao = descricao
         this.responsavel = responsavel
-        this.prazo = prazo
-        this.sprint = parseInt(sprint)
-        this.prioridade = prioridade
-        this.concluida = false
+        this.concluido = false
+        this.dataCriacao = new Date().toISOString().slice(0, 10)
+        this.dataTermino = dataTermino
     }
 }
 
-module.exports = Tarefa
+export default Tarefa

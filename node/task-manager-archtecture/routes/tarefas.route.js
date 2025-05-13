@@ -1,11 +1,13 @@
-const express = require('express')
-const TarefasController = require('../controllers/TarefasController')
-const Router = express.Router()
+import express from "express"
+import TarefasController from "../controllers/TarefasController.js"
+import authenticateToken from "../middleware/authenticateToken.js"
+const tarefasRoutes = express.Router()
 
-Router.get("/tarefas", TarefasController.listarTarefas)
-Router.get("/tarefas/:id", TarefasController.getTarefa)
-Router.post("/tarefas", TarefasController.criarTarefa)
-Router.put("/tarefas/:id", TarefasController.atualizarTarefa)
-Router.delete("/tarefas/:id", TarefasController.deletarTarefa)
+tarefasRoutes.get('/', authenticateToken,TarefasController.getTarefas)
+tarefasRoutes.get('/:id', authenticateToken, TarefasController.getTarefa)
+tarefasRoutes.post('/', authenticateToken,TarefasController.criarTarefa)
+tarefasRoutes.patch('/:id', authenticateToken,TarefasController.atualizarTarefa)
+tarefasRoutes.delete('/:id', authenticateToken, TarefasController.deletarTarefa)
 
-module.exports = Router
+
+export default tarefasRoutes
