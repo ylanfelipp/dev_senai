@@ -1,7 +1,8 @@
+import { v4 as uuid } from "uuid"
 
 class Usuario {
-    constructor(id, nome, email, senha) {
-        this.id = id
+    constructor(nome, email, senha) {
+        this.id = uuid()
         this.nome = nome
         this.email = email
         this.senha = senha

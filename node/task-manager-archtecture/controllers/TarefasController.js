@@ -49,8 +49,7 @@ class TarefasController {
                     throw Error(e.message)
                 }
             }
-            const id = Date.now().toString()
-            const tarefa = new Tarefa(id, titulo, responsavel, dataTermino)
+            const tarefa = new Tarefa(titulo, responsavel, dataTermino)
 
             tarefas.push(tarefa)
             const jsonDados = JSON.stringify(tarefas, null, 2)

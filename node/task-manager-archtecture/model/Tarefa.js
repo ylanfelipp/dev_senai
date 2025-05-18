@@ -1,7 +1,8 @@
+import { v4 as uuid } from "uuid"
 
 class Tarefa {
-    constructor(id, titulo, responsavel, dataTermino) {
-        this.id = id
+    constructor(titulo, responsavel, dataTermino) {
+        this.id = uuid()
         this.titulo = titulo
         this.responsavel = responsavel
         this.concluido = false
